@@ -45,7 +45,7 @@ works without code changes.
 ## workflow_api.json (add your own workflow)
 
 The built-in default targets the MiniMax H3 reference-to-video workflow
-(`workflowId 2123782272871833602`). To use YOUR workflow, copy
+(`workflowId 2124499880344559618`). To use YOUR workflow, copy
 `workflow_api.json`, change the fields, and pass `--config your.json` (or set
 `RUNNINGHUB_WORKFLOW_JSON`).
 

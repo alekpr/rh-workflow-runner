@@ -5,7 +5,7 @@ RunningHub ComfyUI workflow runner (config-driven).
 Workflow topology (node IDs, media slots, aspect enums) comes from
 `workflow_api.json` — provide your own workflowId + node map and this runner
 adapts without code changes. Defaults target the MiniMax H3 reference-to-video
-workflow (workflowId 2123782272871833602).
+workflow (workflowId 2124499880344559618).
 
 Endpoint contract (workflow path, verified against runninghubClient.js):
 
@@ -49,7 +49,7 @@ BASE = (
 ).rstrip("/")
 API_KEY = os.environ.get("RUNNINGHUB_API_KEY", "").strip()
 
-DEFAULT_WORKFLOW_ID = "2123782272871833602"
+DEFAULT_WORKFLOW_ID = "2124499880344559618"
 
 # ---------------------------------------------------------------------------
 # Built-in workflow config. Users override this with their own workflow_api.json

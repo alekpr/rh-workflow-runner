@@ -1,6 +1,6 @@
 {
   "name": "MiniMax H3 reference-to-video (YZ Goldfish)",
-  "workflowId": "2123782272871833602",
+  "workflowId": "2124499880344559618",
   "maxDuration": 15.0,
   "nodes": {
     "prompt":   { "nodeId": "263", "fieldName": "text" },

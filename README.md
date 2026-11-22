@@ -49,7 +49,7 @@ python3 rh_pipeline.py run clips.json --config workflow_api.json --yes
 ## workflow_api.json
 
 The bundled `workflow_api.json` targets the MiniMax H3 reference-to-video
-workflow (`workflowId 2123782272871833602`). To use your own workflow, copy it
+workflow (`workflowId 2124499880344559618`). To use your own workflow, copy it
 and set:
 
 | Field | Meaning |
@@ -70,7 +70,7 @@ and set:
 python3 rh_pipeline.py check --config my_workflow.json   # validate + print map
 ```
 
-### Bundled node map (MiniMax H3, workflowId 2123782272871833602)
+### Bundled node map (MiniMax H3, workflowId 2124499880344559618)
 
 | Field | nodeId | fieldName |
 |---|---|---|
