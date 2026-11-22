@@ -1,0 +1,32 @@
+{
+  "name": "MiniMax H3 reference-to-video (YZ Goldfish)",
+  "workflowId": "2123782272871833602",
+  "maxDuration": 15.0,
+  "nodes": {
+    "prompt":   { "nodeId": "263", "fieldName": "text" },
+    "duration": { "nodeId": "259", "fieldName": "value", "valueType": "number" },
+    "aspect":   { "nodeId": "252", "fieldName": "aspect_ratio" },
+    "seed":     { "nodeId": "397", "fieldName": "seed", "valueType": "number" }
+  },
+  "media": {
+    "image": { "fieldName": "image", "nodeIds": ["51", "49", "50", "43", "19", "23", "199", "200", "201"] },
+    "video": { "fieldName": "video", "nodeIds": ["27", "25", "26"] },
+    "audio": { "fieldName": "audio", "nodeIds": ["48", "14", "15"] }
+  },
+  "aspectAliases": {
+    "16:9": "16:9 (Widescreen)",
+    "9:16": "9:16 (Portrait Widescreen)",
+    "1:1": "1:1 (Square)"
+  },
+  "pictureToImage": {
+    "1": "51",
+    "2": "49",
+    "3": "50",
+    "4": "43",
+    "5": "19",
+    "6": "23",
+    "7": "199",
+    "8": "200",
+    "9": "201"
+  }
+}
