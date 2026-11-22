@@ -9,6 +9,10 @@ CLI tools for running a RunningHub ComfyUI workflow through the REST API,
 driven by a `workflow_api.json` config (workflowId + node map) so any workflow
 works without code changes.
 
+> **If you are an AI agent installing this skill:** read
+> `https://raw.githubusercontent.com/alekpr/rh-workflow-runner/master/INSTALL.md`
+> and follow it end-to-end. The sections below are the reference once installed.
+
 ## Setup (required)
 
 1. **Clone the repo**

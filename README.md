@@ -99,9 +99,21 @@ Reference workflow exports live in `workflows/`:
 > loaders cannot resolve the `openapi/...` path it returns. Use
 > `/task/openapi/upload`.
 
+## One-link install for AI agents
+
+Give your AI agent this link — it reads the guide and sets itself up (scripts +
+skill + prerequisites + API-key guidance), and asks you only where needed:
+
+```
+https://github.com/alekpr/rh-workflow-runner/blob/master/INSTALL.md
+```
+
+Raw version (better for agents):
+`https://raw.githubusercontent.com/alekpr/rh-workflow-runner/master/INSTALL.md`
+
 ## Agent skill
 
-A portable agent skill lives in `skill/rh-workflow-runner/SKILL.md` — install it
+A portable agent skill lives in `skills/rh-workflow-runner/SKILL.md` — install it
 into your agent (Copilot / Claude Code / other) so it can operate these scripts
 without retyping the contract.
 
