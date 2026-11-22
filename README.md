@@ -111,6 +111,18 @@ https://github.com/alekpr/rh-workflow-runner/blob/master/INSTALL.md
 Raw version (better for agents):
 `https://raw.githubusercontent.com/alekpr/rh-workflow-runner/master/INSTALL.md`
 
+### Copy-paste install prompt
+
+ส่งข้อความนี้ให้ AI agent ตัวไหนก็ได้ (Copilot / Claude Code / อื่นๆ):
+
+```
+ช่วยติดตั้ง skill นี้ให้หน่อย โดยอ่านไฟล์จากลิงก์นี้ แล้วทำตามขั้นตอน setup ให้ครบ:
+
+https://raw.githubusercontent.com/alekpr/rh-workflow-runner/master/INSTALL.md
+
+ถ้าติดปัญหาตรงไหน ให้อธิบายวิธีแก้และแนะนำให้ผู้ใช้ทำเอง (ห้ามขอ API key ผ่านแชท)
+```
+
 ## Agent skill
 
 A portable agent skill lives in `skills/rh-workflow-runner/SKILL.md` — install it
