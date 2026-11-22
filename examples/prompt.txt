@@ -1,0 +1,24 @@
+SET @Image 1 as the main character — a young woman with shoulder-length black hair, white shirt, blue jeans, and white sneakers. Lock her exact facial identity, hair, and clothing.
+
+SET @Image 2 as the environment — a bright city sidewalk at noon with concrete pavement, glass storefronts, and parked bicycles. Lock the materials, lighting, and layout.
+
+Target duration: 5 seconds
+Aspect ratio: 9:16 vertical
+Style: Photorealistic cinematic
+
+summary:
+She walks toward the camera along the sidewalk, glances at a storefront, and smiles.
+
+detailed_description:
+
+[Shot 1] At 00:00.000–00:02.500,
+MEDIUM TRACKING SHOT, CAMERA FOLLOWING FROM THE FRONT.
+She walks toward the lens along the sidewalk.
+Her identity and outfit match @Image 1.
+The street and storefronts match @Image 2.
+The camera stays level and steady.
+
+[Shot 2] At 00:02.500–00:05.000,
+CLOSE-UP, STATIC CAMERA.
+She slows down, glances toward the storefront on her left, and smiles softly.
+No dialogue, no captions, no music.
