@@ -1,6 +1,6 @@
 ---
 name: rh-workflow-runner
-description: Run a RunningHub ComfyUI workflow (MiniMax H3 reference-to-video or any custom workflow) via the RunningHub API from the terminal. Use when the user wants to generate a clip from a prompt + reference images/video/audio, run the clip pipeline (analyze → confirm → batch run), map <Picture N> / @Image N registry references and {clip}-audio-N.mp3 audio slots to workflow node IDs, add their own workflow_api.json + workflowId, or validate/check a workflow config. Keywords: runninghub, workflow, clips.json, analyze, submit, MiniMax H3, reference-to-video, workflow_api.json, nodeInfoList, taskId.
+description: "Run a RunningHub ComfyUI workflow (MiniMax H3 reference-to-video or any custom workflow) via the RunningHub API from the terminal or from Codex chat attachments. Use when the user wants to generate a clip from a prompt + reference images/video/audio, map attached files to Image N, confirm and submit a task, return the rendered video in chat, run the clip pipeline (analyze → confirm → batch run), add their own workflow_api.json + workflowId, or validate/check a workflow config. Keywords: runninghub, workflow, clips.json, analyze, submit, MiniMax H3, reference-to-video, workflow_api.json, nodeInfoList, taskId."
 ---
 
 # RunningHub Workflow Runner
@@ -41,6 +41,13 @@ works without code changes.
    ```
    This prints the resolved workflowId + node/slot map. If it prints without
    `ERROR`, setup is complete.
+
+## Codex chat attachments
+
+When a user attaches prompt/media files with **Add files** and wants Codex to
+run the workflow, read [references/codex-chat.md](references/codex-chat.md)
+before mapping files or submitting. Use the attachment paths supplied by the
+Codex host; do not ask the user to type local paths that are already available.
 
 ## workflow_api.json (add your own workflow)
 
@@ -128,7 +135,7 @@ python3 rh_pipeline.py analyze --dir ./EP --refs-dir ./EP/Refs --config workflow
 
 # 2. review clips.json, fill any missing "aspect"
 
-# 3. batch run (sequential, resumes per-clip, writes results.json)
+# 3. batch run (sequential, continues after per-clip errors, writes results.json)
 python3 rh_pipeline.py run clips.json --config workflow_api.json --yes --results results.json
 
 # 4. validate a config without running anything
@@ -151,9 +158,11 @@ python3 rh_pipeline.py check --config workflow_api.json
 - **Image refs** in prompts: `<Picture N>` or `@Image N` → slot N → nodeId via
   `media.image.nodeIds`. The pipeline auto-detects both syntaxes.
 - **Audio naming**: `{clip}-audio-N.mp3` (or `{scene}-audio-N.mp3`) → audio slot N.
-- **Aspect**: priority = `--aspect` explicit → auto-detect from prompt keywords
-  (`9:16`/vertical/portrait, `16:9`/horizontal/landscape, `1:1`/square) → exit
-  code 3 and ask the user.
+- **Aspect**: an explicit `--aspect` must be the workflow's exact enum string,
+  such as `9:16 (Portrait Widescreen)`. Otherwise omit it and let prompt
+  keywords (`9:16`/vertical/portrait, `16:9`/horizontal/landscape,
+  `1:1`/square) resolve through `aspectAliases`; if none is found, the runner
+  exits with code 3 and asks the user.
 - **Unused media nodes MUST be disabled (muted) in the published workflow** —
   the API can only set field values, not enable/disable nodes.
 
@@ -165,5 +174,6 @@ python3 rh_pipeline.py check --config workflow_api.json
   workflow is not muted; mute it and republish.
 - Image/character not matching the reference → wrong upload endpoint was used,
   or the reference is not in the highest-priority image slot (slot 1 is highest).
-- `Connection reset by peer` mid-poll → re-run `run` (it recovers per clip by
-  re-checking task status).
+- `Connection reset by peer` mid-poll → check RunningHub task history before
+  retrying. The current batch runner does not persist an active task ID or
+  checkpoint partial results, so blindly re-running can submit a duplicate.

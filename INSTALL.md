@@ -13,7 +13,8 @@ workflow through the REST API, driven by a `workflow_api.json` config.
 - `rh_workflow_runner.py` — single clip (upload → submit → poll → download)
 - `rh_pipeline.py` — pipeline (`check`, `analyze`, `run`)
 - `workflow_api.json` — workflow topology (workflowId + node map)
-- `skills/rh-workflow-runner/SKILL.md` — the skill for other agents
+- `skills/rh-workflow-runner/` — the skill and its supporting references for
+  other agents
 
 ## 1. Detect your platform (skill install location)
 
@@ -48,7 +49,7 @@ cp /tmp/rh-workflow-runner/workflow_api.json     ~/rh-workflow-runner/
 ```bash
 SKILL_DIR="<skill-dir-from-step-1>"
 mkdir -p "$SKILL_DIR/rh-workflow-runner"
-cp /tmp/rh-workflow-runner/skills/rh-workflow-runner/SKILL.md "$SKILL_DIR/rh-workflow-runner/SKILL.md"
+cp -R /tmp/rh-workflow-runner/skills/rh-workflow-runner/. "$SKILL_DIR/rh-workflow-runner/"
 ```
 
 ## 5. Verify prerequisites
